@@ -35,7 +35,7 @@
                       <div class="flex-shrink-0" alt="Names"> <img  class="avatar avatar-lg p-1" :src=picture alt="applicant picture"></div>
                       <div class="flex-grow-1 ps-3">
                         <h4 class="mb-0" :names='names'>{{ names }}</h4>
-                        <p class="text-muted mb-0">Coder</p>
+                        <p class="mb-0" :role='role'>{{ role }}</p>
                         <ul class="social-links list-inline mb-0 mt-2">
                           <li class="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan" aria-label="@nathan"><i class="fab fa-github"></i></a></li>
                           <li class="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan_andrews" aria-label="@nathan_andrews"><i class="fab fa-twitter"></i></a></li>
@@ -210,23 +210,27 @@ export default {
          title: '',
          picture: '',
          bio: '',
+         role:'',
+         //links: [],
        }
      },
      created(){
        axios
-       .get("https://torre.bio/api/bios/philipmatunda")
+       .get("https://torre.bio/api/bios/taniazapata")
        .then(response=>{
          this.names = response.data.person.name;
          this.title = response.data.person.professionalHeadline;
          this.picture = response.data.person.picture
          this.bio = response.data.person.summaryOfBio
+         //this.links = response.data.person.links
+         this.role = response.data.experiences[0].name
        })
        .catch(error=>{
          console.log('There was an error: ' + error.response);
        })
      }
 //   methods: {
-//     getList() {
+//     getInfo() {
 //       var api = 'https://torre.bio/api/bios/philipmatunda';
 //       this.axios.get(api).then((response) => {
 //         console.log(response.data)
@@ -238,7 +242,7 @@ export default {
 //     }
 //   }
 //   mounted() {
-//     VueAxios
+//      axios
 //     .get('https://torre.bio/api/bios/')
 //     .then(response => (this.info = response.data.bpi))
 //     .catch(error => console.log(error))
