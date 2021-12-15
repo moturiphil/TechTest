@@ -216,7 +216,8 @@ export default {
      },
      created(){
        axios
-       .get("http://torre.bio/api/bios/taniazapata")
+       //.get("https://cors-anywhere.herokuapp.com/https://torre.bio/api/bios/taniazapata")
+       .get("https://torre.bio/api/bios/taniazapata")
        .then(response=>{
          this.names = response.data.person.name;
          this.title = response.data.person.professionalHeadline;
