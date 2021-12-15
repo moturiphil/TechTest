@@ -97,7 +97,7 @@
                             <div class="flex-grow-1 ps-3 text-sm text-muted"><strong class="text-dark">Skill 1 </strong> <br> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                           </div>
                           <div class="d-flex mt-4">
-                            <div class="flex-grow-1 ps-3 text-sm text-muted"><strong class="text-dark">Tony O'Brian: </strong><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                            <div class="flex-grow-1 ps-3 text-sm text-muted"><strong class="text-dark">Skill 2 </strong><br>Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
                           </div>
                         </div>
                       </div>
@@ -119,7 +119,7 @@
                       <div class="col-sm-6 col-md-3">
                         <div class="mb-4">
                           <label class="form-label">Username</label>
-                          <input class="form-control" type="text" placeholder="Username" value="Jassa">
+                          <input class="form-control" type="text" placeholder="Username" value="Names">
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-4">
@@ -162,8 +162,10 @@
                         <div class="mb-4">
                           <label class="form-label">Country</label>
                           <select class="form-control custom-select">
+                            <option value="">KE</option>
                             <option value="">UK</option>
                             <option value="">US</option>
+                            <option value="">COL</option>
                           </select>
                         </div>
                       </div>
@@ -199,11 +201,21 @@
 //importing bootstrap 5 Modules
 import "bootstrap/dist/css/bootstrap.min.css";
 //import * as Vue from 'vue' // in Vue 3
-// import axios from 'axios'
+import axios from 'axios'
 // Vue.use(VueAxios, axios)
 
 export default {
-//   name: 'App',
+     name: 'App',
+     created(){
+       axios
+       .get("https://torre.bio/api/bios/philipmatunda")
+       .then(response=>{
+         console.log(response);
+       })
+       .catch(error=>{
+         console.log('There was an error: ' + error.response);
+       })
+     }
 //   methods: {
 //     getList() {
 //       var api = 'https://torre.bio/api/bios/philipmatunda';
