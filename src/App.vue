@@ -200,7 +200,7 @@
 import "bootstrap/dist/css/bootstrap.min.css";
 //import * as Vue from 'vue' // in Vue 3
 import axios from 'axios'
-// Vue.use(VueAxios, axios)
+// Vue.use(VueAxios, axios)]
 
 export default {
      name: 'App',
@@ -216,7 +216,7 @@ export default {
      },
      created(){
        axios
-       .get("https://torre.bio/api/bios/taniazapata")
+       .get("http://torre.bio/api/bios/taniazapata")
        .then(response=>{
          this.names = response.data.person.name;
          this.title = response.data.person.professionalHeadline;
@@ -229,6 +229,21 @@ export default {
          console.log('There was an error: ' + error.response);
        })
      }
+    //  created(){
+    //    axios
+    //    .get("https://torre.bio/api/bios/taniazapata")
+    //    .then(response=>{
+    //      this.names = response.data.person.name;
+    //      this.title = response.data.person.professionalHeadline;
+    //      this.picture = response.data.person.picture
+    //      this.bio = response.data.person.summaryOfBio
+    //      //this.links = response.data.person.links
+    //      this.role = response.data.experiences[0].name
+    //    })
+    //    .catch(error=>{
+    //      console.log('There was an error: ' + error.response);
+    //    })
+    //  }
 //   methods: {
 //     getInfo() {
 //       var api = 'https://torre.bio/api/bios/philipmatunda';
