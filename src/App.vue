@@ -7,7 +7,7 @@
                 <p class="mb-2 mb-md-0 fw-bold">Torre-Test</p>
               </div>
               <div class="col-md-6 text-center text-md-end text-gray-400">
-                <p class="mb-0">FirstName</p>
+                <p class="mb-0" :names='names'>{{ names }}</p>
               </div>
             </div>
           </div>
@@ -22,18 +22,19 @@
               <div class="col-lg-4">
                 <div class="card card-profile mb-4">
                   <div class="card-header" style="background-image: url(https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcROdNIejFmjeKC5u6Xq2yqOCa5y-uJseTCTfA&usqp=CAU);"> </div>
-                  <div class="card-body text-center"><img class="card-profile-img" src="https://cdn1.iconfinder.com/data/icons/avatars-flat/33/an-05-512.png" alt="Jassa Rich">
-                    <h3 class="mb-3">Names</h3>
-                    <p class="mb-4">Full Stack Developer</p>
+                  <div class="card-body text-center">
+                    <img class="card-profile-img" :src=picture alt="applicant picture">
+                    <h3 class="mb-3" :names='names'>{{ names }}</h3>
+                    <p class="mb-4" :title='title'>{{title}}</p>
                     <button class="btn btn-outline-dark btn-sm"><span class="fab fa-twitter"></span> Follow</button>
                   </div>
                 </div>
                 <div class="card mb-4">
                   <div class="card-body">
                     <div class="d-flex align-items-center">
-                      <div class="flex-shrink-0"><img class="avatar avatar-lg p-1" src="https://cdn1.iconfinder.com/data/icons/avatars-flat/33/an-05-512.png" alt="Names"></div>
+                      <div class="flex-shrink-0" alt="Names"> <img  class="avatar avatar-lg p-1" :src=picture alt="applicant picture"></div>
                       <div class="flex-grow-1 ps-3">
-                        <h4>Names</h4>
+                        <h4 class="mb-0" :names='names'>{{ names }}</h4>
                         <p class="text-muted mb-0">Coder</p>
                         <ul class="social-links list-inline mb-0 mt-2">
                           <li class="list-inline-item"><a href="javascript:void(0)" data-bs-toggle="tooltip" data-placement="top" title="" data-bs-original-title="@nathan" aria-label="@nathan"><i class="fab fa-github"></i></a></li>
@@ -44,21 +45,21 @@
                     </div>
                   </div>
                 </div>
-                <form class="card mb-4">
+                <!-- <form class="card mb-4">
                   <div class="card-header">
                     <h4 class="card-heading">My Profile</h4>
                   </div>
                   <div class="card-body">
                     <div class="row mb-3">
-                      <div class="col-auto d-flex align-items-center"><img class="avatar avatar-lg p-1" src="https://cdn1.iconfinder.com/data/icons/avatars-flat/33/an-05-512.png" alt="Avatar"></div>
+                      <div class="col-auto d-flex align-items-center"> <img  class="avatar avatar-lg p-1" :src=picture alt="applicant picture"></div>
                       <div class="col">
-                        <label class="form-label">Name</label>
+                        <label class="form-label">{{ names }}</label>
                         <input class="form-control" placeholder="Your name">
                       </div>
                     </div>
                     <div class="mb-3"> 
                       <label class="form-label">Bio</label>
-                      <textarea class="form-control" rows="8">Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</textarea>
+                      <textarea class="form-control" rows="8">asd;flnsa Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</textarea>
                     </div>
                     <div class="mb-3"> 
                       <label class="form-label">Email</label>
@@ -70,21 +71,18 @@
                   <div class="card-footer text-end">
                     <button class="btn btn-primary">Save</button>
                   </div>
-                </form>
+                </form> -->
               </div>
               <div class="col-lg-8">
                 <div class="card overflow-hidden mb-4">
                   <div class="card-header">
-                    <div class="input-group">
-                      <input class="form-control" type="text" placeholder="Message">
-                      <button class="btn btn-outline-secondary" type="button"><i class="fa fa-paper-plane"></i></button>
-                    </div>
+                    <h4 class="card-heading">My Profile</h4>
                   </div>
                   <div class="list-group-item border-start-0 border-end-0 py-5">
                       <div class="d-flex">
                         <div class="flex-grow-1 ps-3"><small class="float-right"></small>
                           <h5 class="fw-bold">Bio</h5>
-                          <div class="text-muted text-sm"> Lorem Ipsum is simply dummy text of the printing and typesetting industry. Lorem Ipsum has been the industry's standard dummy text ever since the 1500s, when an unknown printer took a galley of type and scrambled it to make a type specimen book.</div>
+                          <div class="text-muted text-sm" :bio='bio'>{{bio}}</div>
                         </div>
                       </div>
                     </div>
@@ -104,7 +102,7 @@
                     </div>
                   </div>
                 </div>
-                <form class="card mb-4">
+                <!-- <form class="card mb-4">
                   <div class="card-header">
                     <h4 class="card-heading">Edit Profile</h4>
                   </div>
@@ -113,7 +111,7 @@
                       <div class="col-md-5">
                         <div class="mb-4">
                           <label class="form-label">Company</label>
-                          <input class="form-control" type="text" placeholder="Company" value="Namess">
+                          <input class="form-control" type="text" placeholder="Company" value="Names">
                         </div>
                       </div>
                       <div class="col-sm-6 col-md-3">
@@ -180,7 +178,7 @@
                   <div class="card-footer text-end">
                     <button class="btn btn-primary" type="submit">Update Profile</button>
                   </div>
-                </form>
+                </form> -->
               </div>
             </div>
           </section>
@@ -206,11 +204,22 @@ import axios from 'axios'
 
 export default {
      name: 'App',
+     data(){
+       return {
+         names: '',
+         title: '',
+         picture: '',
+         bio: '',
+       }
+     },
      created(){
        axios
        .get("https://torre.bio/api/bios/philipmatunda")
        .then(response=>{
-         console.log(response);
+         this.names = response.data.person.name;
+         this.title = response.data.person.professionalHeadline;
+         this.picture = response.data.person.picture
+         this.bio = response.data.person.summaryOfBio
        })
        .catch(error=>{
          console.log('There was an error: ' + error.response);
